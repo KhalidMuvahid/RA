@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BaseUIComponents</string>
+    <string name="hello_world">Hello World</string>
+    <string name="this_is_image_view">This is image view</string>
+    <string name="random_number">random number %1$d</string>
+    <string name="search_hint">Enter here for search</string>
+</resources>
