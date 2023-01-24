@@ -1,10 +1,13 @@
 package com.example.listviewandspinearview.baseadapter;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 
 import com.example.listviewandspinearview.ArrayAdapterActivity;
+import com.example.listviewandspinearview.R;
 import com.example.listviewandspinearview.databinding.ActivityBaseAdapterBinding;
 import com.example.listviewandspinearview.databinding.AddDilogBinding;
 
@@ -42,6 +45,38 @@ public class BaseAdapterActivity extends AppCompatActivity implements OnDeleteIt
                 addItem();
             }
         });
+
+        /*set on item click listener is not work with spinner
+        *but we can use onItemSelected Listener
+        *   * */
+        /*
+        binding.listView.setOnItemClickListener((parent, view, position, id) -> {
+            showDialogInfo((Character) adapter.getItem(position));
+        });
+        */
+
+        binding.listView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Character character = (Character) adapter.getItem(position);
+                binding.selectedItem.setText(getString(R.string.selectedItemText,character.name,character.id));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                binding.selectedItem.setText("Spinner is empty");
+            }
+        });
+    }
+
+    private void showDialogInfo(Character info) {
+        AlertDialog dialog = new AlertDialog.Builder(this)
+                .setTitle("Information")
+                .setMessage(getString(R.string.character_info,info.name,info.id))
+                .setNegativeButton("ok", (dialog1, which) -> {})
+                .create();
+
+        dialog.show();
     }
 
     @Override

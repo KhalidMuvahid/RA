@@ -36,6 +36,15 @@ public class CharacterAdapter extends BaseAdapter implements View.OnClickListene
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        return defaultView(position,convertView,parent,true);
+    }
+
+    @Override
+    public View getDropDownView(int position, View convertView, ViewGroup parent) {
+        return defaultView(position,convertView,parent,false);
+    }
+
+    public View defaultView(int position, View convertView, ViewGroup parent,boolean isDropped) {
         BaseAdapterItemBinding binding;
         if (convertView == null){
             binding = createBinding(parent.getContext());
@@ -47,13 +56,14 @@ public class CharacterAdapter extends BaseAdapter implements View.OnClickListene
 
         binding.textView.setText(character.name);
         binding.deleteButton.setTag(character);
-        if (character.isCustom){
+        if (isDropped){
             binding.deleteButton.setVisibility(View.VISIBLE);
         }else {
             binding.deleteButton.setVisibility(View.GONE);
         }
         return binding.getRoot();
     }
+
 
     private BaseAdapterItemBinding createBinding(Context context) {
         BaseAdapterItemBinding binding  = BaseAdapterItemBinding.inflate(LayoutInflater.from(context));
