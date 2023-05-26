@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HarryPoterPhrase</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="screenText">Screen #%1$d</string>
+    <string name="launch_next_bt">Launch next</string>
+    <string name="go_back_bt">Go Back</string>
+</resources>
