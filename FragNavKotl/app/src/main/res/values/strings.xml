@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">FragNavKotl</string>
+    <string name="app_name">Fragment Navigation Kotlin</string>
+    <string name="boxTitle">Box  Chooser</string>
+    <string name="menu_text">confirm</string>
+    <string name="optionTex">Option</string>
+
+    <plurals name="boxes">
+        <item quantity="zero">%1$d boxes</item>
+        <item quantity="one">%1$d box</item>
+        <item quantity="two">%1$d boxes</item>
+        <item quantity="few">%1$d boxes</item>
+        <item quantity="many">%1$d boxes</item>
+        <item quantity="other">%1$d boxes</item>
+    </plurals>
 </resources>

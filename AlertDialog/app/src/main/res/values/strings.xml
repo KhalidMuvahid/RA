@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Level 1</string>
+    <string name="current_volume">Current Volume: %1$d%%</string>
+    <string name="current_color">Current Color:</string>
+    <string name="confirm">confirm</string>
+
+    <string-array name="colors">
+        <item>Red</item>
+        <item>Green</item>
+        <item>Blue</item>
+    </string-array>
+</resources>

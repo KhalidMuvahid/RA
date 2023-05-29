@@ -64,7 +64,7 @@ class CounterFragment : Fragment() {
                 putString(ARG_QUOTE,quote)
             }
 
-            val fragment = CounterFragment().apply { arguments = args }
+            val fragment = CounterFragment()
             fragment.arguments = args
             return fragment
         }
